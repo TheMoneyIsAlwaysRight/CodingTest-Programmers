@@ -6,20 +6,13 @@
 int solution(const char* my_string, const char* is_prefix) 
 {
     //is_prefix의 (문자열+NULL)의 길이 알아내기
-    int count = 0;
-    for (int x = 0;;x++)
-    {
-        if (is_prefix[x] == NULL)
-        {
-            count = x;
-            break; 
-        }
-    }
+
+    int count = strlen(is_prefix);
     
     
     bool isCorrect = true;
     
-    for(int x=0;x<count;x++) //NULL문자 제외
+    for(int x=0;x<count;x++)
     {
         if((my_string[x] == NULL && is_prefix[x] != NULL)) //비교할 문자열이 더 긴 경우 제외.  
         {
